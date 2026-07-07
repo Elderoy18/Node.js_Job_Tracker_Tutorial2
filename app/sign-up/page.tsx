@@ -106,8 +106,7 @@ export default function SignUp(){
                     <Button 
                     type="submit"
                     className="w-full bg-primary hover:bg-primary/90"
-                    disabled={loading}
-                    >
+                    disabled={loading}>
                         {loading ? "Creating account..." : "Sign Up"}
                     </Button>
                     <p className="text-center text-sm text-gray-600">
