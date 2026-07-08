@@ -11,7 +11,7 @@ import { signIn } from "@/lib/auth/auth-client";
 
 // Password123
 
-export default function SignUp(){
+export default function SignIn(){
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
 
@@ -32,7 +32,7 @@ export default function SignUp(){
             });
 
             if(result.error){
-                setError(result.error.message ?? "Failed to sign up");
+                setError(result.error.message ?? "Failed to sign in");
             }else{
                 router.push("/dashboard");
             }
@@ -89,7 +89,14 @@ export default function SignUp(){
                     </div>
                 </CardContent>
                 <CardFooter className="flex flex-col space-y-4">
-                    <Button type="submit" className="w-full bg-primary hover:bg-primary/90">Sign In</Button>
+                    <Button 
+                    type="submit"
+                    className="w-full bg-primary 
+                    hover:bg-primary/90" 
+                    disabled={loading}
+                    >
+                        {loading ? "Signing In..." : "Sign In"}
+                    </Button>
                     <p className="text-center text-sm text-gray-600">
                         Don't have an account? <Link href="/sign-up">Sign Up</Link>
                     </p>
