@@ -1,0 +1,29 @@
+// not working
+<div className="flex items-center gap-4">
+                    {session?.user ? (
+                        <>
+                            <Link href="/dashboard">
+                                <Button
+                                variant="ghost"
+                                className="text-gray-700 hover:text-black"
+                                >
+                                    Dashboard
+                                </Button>
+
+                            </Link>
+                        </>
+                    ):(
+                    <>
+                        <Link href="/sign-in">
+                            <Button className="text-gray-700 hover:bg-primary/90">
+                                Log In
+                            </Button>
+                        </Link>
+                        <Link href="/sign-up">
+                            <Button className="text-gray-700 hover:bg-primary/90">
+                                Sign Up
+                            </Button>
+                        </Link>
+                    </>
+                    )}
+                </div> 
